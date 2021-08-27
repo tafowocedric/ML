@@ -1,0 +1,225 @@
+{
+    "intents": [
+        {
+            "tag": "greetings",
+            "patterns": [
+                "hi",
+                "hello",
+                "yo",
+                "ramses",
+                "is any one there"
+            ],
+            "responses": [
+                "_h1 _f1 Hi _name_ h1_",
+                "_h1 _f1 Hey _name_ h1_",
+                "_h1 _f1 Hi there h1_ _p _f2 Hope you are having a good day. p_",
+                "_h1 _f1 Hello h1_",
+                "_h1 _f1 Hello, _name_ h1_"
+            ],
+            "context": "",
+            "queue": [],
+            "validate": [
+                {
+                    "elements": [
+                        "hi",
+                        "hello",
+                        "yo",
+                        "there"
+                    ],
+                    "min_len": 1,
+                    "max_len": 2,
+                    "key": [
+                        "ramses"
+                    ],
+                    "period": []
+                }
+            ]
+        },
+        {
+            "tag": "greetings_period",
+            "patterns": [
+                "good morning",
+                "good afternoon",
+                "good evening",
+                "good night",
+                "morning",
+                "afternoon",
+                "evening",
+                "night"
+            ],
+            "responses": [
+                "_h1 _f1 Good _period_ to you to. h1_",
+                "_h1 _f1 Good _period_ _name_ h1_",
+                "_h1 _f1 Hi _name_ h1_",
+                "_h1 _f1 Good _period_ h1_"
+            ],
+            "context": "",
+            "queue": [],
+            "validate": [
+                {
+                    "elements": [
+                        "good"
+                    ],
+                    "min_len": 2,
+                    "max_len": 3,
+                    "key": [],
+                    "period": [
+                        "morning",
+                        "afternoon",
+                        "evening",
+                        "night"
+                    ]
+                }
+            ]
+        },
+        {
+            "tag": "ramses_state",
+            "patterns": [
+                "how are you",
+                "what up?",
+                "how you doin?"
+            ],
+            "responses": [
+                "_h1 _f1 I'm fine thank you. h1_",
+                "_h1 _f1 I'm doing great. Thanks for asking. h1_",
+                "_h1 _f1 I'm great. h1_ _p _f2 what will you like to know about your business today? p_"
+            ],
+            "context": "",
+            "queue": [],
+            "validate": [
+                {
+                    "elements": [
+                        "how",
+                        "are",
+                        "what"
+                    ],
+                    "min_len": 2,
+                    "max_len": 3,
+                    "keys": [
+                        "you",
+                        "up",
+                        "doin"
+                    ],
+                    "period": []
+                }
+            ]
+        },
+        {
+            "tag": "appreciation",
+            "patterns": [
+                "thank you",
+                "thanks",
+                "great job",
+                "cool"
+            ],
+            "responses": [
+                "_h1 _f1 You are welcome h1_",
+                "_h1 _f1 You're welcome. h1_ _span _f2 If there's anything else I can help with, just let me know span_",
+                "_h1 _f1 Glad I did well. h1_ _p _f2 Your business means a lot to me p_"
+            ],
+            "context": "",
+            "queue": [],
+            "validate": [
+                {
+                    "elements": [
+                        "thank",
+                        "great",
+                        "cool"
+                    ],
+                    "min_len": 1,
+                    "max_len": 2,
+                    "keys": [
+                        "you"
+                    ],
+                    "period": []
+                }
+            ]
+        },
+        {
+            "tag": "ramses_name",
+            "patterns": [
+                "what is your name",
+                "what should I call you",
+                "your name"
+            ],
+            "responses": [
+                "_h1 _f1 My name is Ramses h1_ _span _f2 My mission: Predictive analysis and forecast for your business. span_",
+                "_h1 _f1 I'm Ramses h1_",
+                "_h1 _f1 I'm Ramses your personal business consultant. h1_"
+            ],
+            "context": "",
+            "queue": [],
+            "validate": [
+                {
+                    "elements": [
+                        "what",
+                        "your"
+                    ],
+                    "min_len": 2,
+                    "max_len": 3,
+                    "keys": [
+                        "name",
+                        "call",
+                        "you"
+                    ],
+                    "period": []
+                }
+            ]
+        },
+        {
+            "tag": "user_name",
+            "patterns": [
+                "what is my name",
+                "whats my name?",
+                "my name"
+            ],
+            "responses": [
+                "_h1 _f1 Your name is _name_ h1_",
+                "_h1 _f1 _name_ is your name h1_"
+            ],
+            "context": "",
+            "queue": [],
+            "validate": [
+                {
+                    "elements": [
+                        "my"
+                    ],
+                    "min_len": 2,
+                    "keys": [
+                        "name"
+                    ],
+                    "period": []
+                }
+            ]
+        },
+        {
+            "tag": "help",
+            "patterns": [
+                "what can you do",
+                "help",
+                "how it works",
+                "assistant"
+            ],
+            "responses": [
+                "_h1 _f1 Here is a list of things I can do. h1_ _ol _f2 ol_",
+                "_h1 _f1 You can ask one of the following h1_ _ol _f2 ol_"
+            ],
+            "context": "",
+            "queue": [],
+            "validate": [
+                {
+                    "elements": [
+                        "help",
+                        "how",
+                        "work",
+                        "assist"
+                    ],
+                    "min_len": 1,
+                    "max_len": 2,
+                    "keys": [],
+                    "period": []
+                }
+            ]
+        }
+    ]
+}

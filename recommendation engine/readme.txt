@@ -1,0 +1,1 @@
+The aim of this folder is to create a recommendation engine for business. based on users.

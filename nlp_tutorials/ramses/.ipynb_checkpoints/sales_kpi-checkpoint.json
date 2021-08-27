@@ -1,0 +1,1305 @@
+{
+	"intents": [
+		{
+			"tag": "business_state",
+			"patterns": [
+				"what is the state of my business",
+				"business state",
+				"how is my business doing"
+			],
+			"responses": [
+				"_h1 _f1 Here is the condition of your business h1_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"state"
+					],
+					"min_len": 2,
+					"keys": [
+						"business"
+					],
+					"period": []
+				}
+			]
+		},
+		{
+			"tag": "daily_forecast",
+			"patterns": [
+				"forecast revenue for today",
+				"forecast sales for today",
+				"today forecast revenue",
+				"today forecast"
+			],
+			"responses": [
+				"_h1 _f1 Here is your forecast revenue for today. h1_ _amt _f2 _value_ amt_",
+				"_h1 _f1 Your forecast revenue for today is. h1_ _amt _f2 _value_ amt_",
+				"_amt _f2 _value_ amt_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"forecast"
+					],
+					"min_len": 2,
+					"max_len": 3,
+					"keys": [
+						"this",
+						"recent",
+						"now"
+					],
+					"period": [
+						"today",
+						"moment",
+						"afternoon",
+						"evening",
+						"morning"
+					]
+				}
+			]
+		},
+		{
+			"tag": "weekly_forecast",
+			"patterns": [
+				"forecast sales for this week",
+				"forecast revenue for this week",
+				"sales forecast for this week",
+				"current week forecast",
+				"week forecast revenue",
+				"week forecast"
+			],
+			"responses": [
+				"_h1 _f1 _value_ is your forecast revenue for this week h1_",
+				"_h1 _f2 Is your forecast revenue for this week. h1_ _amt _f1 _value_ amt_",
+				"_h1 _f1 Here is your forecast revenue for this week. h1_ _amt _f2 _value_ amt_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"forecast"
+					],
+					"min_len": 3,
+					"max_len": 4,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"week"
+					]
+				}
+			]
+		},
+		{
+			"tag": "monthly_forecast",
+			"patterns": [
+				"forecast revenue for this month",
+				"forecast sales for this month",
+				"month forecast",
+				"month forecast revenue"
+			],
+			"responses": [
+				"_h1 _f2 Your forecast revenue for this month is _value_ h1_",
+				"_h1 _f1 Here is your forecast revenue for this month h1_ _amt _f2 _value_ amt_",
+				"_amt _f2 _value_ amt_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"forecast"
+					],
+					"min_len": 3,
+					"max_len": 4,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"month"
+					]
+				}
+			]
+		},
+		{
+			"tag": "today_revenue",
+			"patterns": [
+				"revenue for today",
+				"revenue for this day",
+				"revenue before tomorrow",
+				"revenue for this morning",
+				"revenue for this afternoon",
+				"revenue for this evening",
+				"revenue for this moment",
+				"revenue for time being",
+				"revenue now",
+				"my recent revenue",
+				"today revenue",
+				"earnings for today",
+				"earnings for this day",
+				"earnings for this very day",
+				"earnings before tomorrow",
+				"earnings for this morning",
+				"earnings for this afternoon",
+				"earnings for this evening",
+				"earnings for this moment",
+				"earnings for time being",
+				"earnings now",
+				"my recent earnings",
+				"today earnings",
+				"sales for today",
+				"sales for this day",
+				"sales for this very day",
+				"sales before tomorrow",
+				"sales for this morning",
+				"sales for this afternoon",
+				"sales for this evening",
+				"sales for this moment",
+				"sales for time being",
+				"sales now",
+				"my recent sales",
+				"today sales"
+			],
+			"responses": [
+				"_h1 _f1 Your revenue for today is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your revenue for today. h1_ _amt _f2 _value_ amt_ _amtdet  _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your revenue for today. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"revenue",
+						"earnings",
+						"sales"
+					],
+					"min_len": 2,
+					"max_len": 3,
+					"keys": [
+						"this",
+						"recent",
+						"now"
+					],
+					"period": [
+						"today",
+						"moment",
+						"afternoon",
+						"evening",
+						"morning"
+					]
+				}
+			]
+		},
+		{
+			"tag": "yesterday_revenue",
+			"patterns": [
+				"revenue for yesterday",
+				"revenue for the previous day",
+				"revenue for yesterday morning",
+				"revenue for yesterday afternoon",
+				"revenue for yesterday evening",
+				"yesterday revenue",
+				"earnings for yesterday",
+				"earnings for the previous day",
+				"earnings for yesterday morning",
+				"earnings for yesterday afternoon",
+				"earnings for yesterday evening",
+				"yesterday earnings",
+				"sales for yesterday",
+				"sales for the previous day",
+				"sales for yesterday morning",
+				"sales for yesterday afternoon",
+				"sales for yesterday evening",
+				"yesterday sales"
+			],
+			"responses": [
+				"_h1 _f1 Your revenue for yesterday was _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your revenue for yesterday. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your revenue for yesterday. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"revenue",
+						"sales",
+						"earnings"
+					],
+					"min_len": 2,
+					"max_len": 3,
+					"keys": [
+						"yesterday",
+						"previous"
+					],
+					"period": []
+				}
+			]
+		},
+		{
+			"tag": "current_week_revenue",
+			"patterns": [
+				"revenue for this week",
+				"earnings for this week",
+				"sales for this week"
+			],
+			"responses": [
+				"_h1 _f1 Your revenue for this week is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your revenue for this week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your revenue for this week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"revenue",
+						"sales",
+						"earnings"
+					],
+					"min_len": 3,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"week"
+					]
+				}
+			]
+		},
+		{
+			"tag": "last_week_revenue",
+			"patterns": [
+				"revenue for last week",
+				"revenue for the past week",
+				"what was my revenue for the previous week",
+				"revenue one week ago",
+				"last week revenue",
+				"earnings for last week",
+				"earnings for the past week",
+				"earnings for the previous week",
+				"earnings one week ago",
+				"last week earnings",
+				"sales for last week",
+				"sales for the past week",
+				"sales for the previous week",
+				"sales one week ago",
+				"last week sales"
+			],
+			"responses": [
+				"_h1 _f1 Your revenue for last week was _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your revenue for last week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your revenue for last week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"revenue",
+						"sales",
+						"earnings"
+					],
+					"min_len": 3,
+					"keys": [
+						"last",
+						"past",
+						"previous",
+						"ago"
+					],
+					"period": [
+						"week"
+					]
+				}
+			]
+		},
+		{
+			"tag": "current_month_revenue",
+			"patterns": [
+				"revenue for this month",
+				"earnings for this month",
+				"sales for this month"
+			],
+			"responses": [
+				"_h1 _f1 Your revenue for this month is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your revenue for this month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your revenue for this month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"revenue",
+						"sales",
+						"earnings"
+					],
+					"min_len": 3,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"month"
+					]
+				}
+			]
+		},
+		{
+			"tag": "last_month_revenue",
+			"patterns": [
+				"revenue last month",
+				"revenue, for a month ago",
+				"revenue, one month ago",
+				"revenue for the previous month",
+				"revenue for the past month",
+				"earnings last month",
+				"earnings, for a month ago",
+				"earnings, one month ago",
+				"earnings for the previous month",
+				"earnings for the past month",
+				"sales last month",
+				"sales, for a month ago",
+				"sales, one month ago",
+				"sales for the previous month",
+				"sales for the past month"
+			],
+			"responses": [
+				"_h1 _f1 Your revenue for last month was _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your revenue for last month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your revenue for last month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"revenue",
+						"sales",
+						"earnings"
+					],
+					"min_len": 3,
+					"keys": [
+						"last",
+						"past",
+						"previous",
+						"ago"
+					],
+					"period": [
+						"month"
+					]
+				}
+			]
+		},
+		{
+			"tag": "current_year_revenue",
+			"patterns": [
+				"revenue for this year",
+				"earnings for this year",
+				"sales for this year"
+			],
+			"responses": [
+				"_h1 _f1 Your revenue for this year is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your revenue for this year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your revenue for this year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"revenue",
+						"sales",
+						"earnings"
+					],
+					"min_len": 3,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"year"
+					]
+				}
+			]
+		},
+		{
+			"tag": "last_year_revenue",
+			"patterns": [
+				"revenue for last year",
+				"revenue for the past year",
+				"revenue for the previous year",
+				"revenue year ago",
+				"revenue one year ago",
+				"ayear revenue",
+				"earnings for last year",
+				"earnings for the past year",
+				"earnings for the previous year",
+				"earnings year ago",
+				"earnings one year ago",
+				"ayear earnings",
+				"sales for last year",
+				"sales for the past year",
+				"sales for the previous year",
+				"sales year ago",
+				"sales one year ago",
+				"ayear sales"
+			],
+			"responses": [
+				"_h1 _f1 Your revenue for last year is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your revenue for last year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your revenue for last year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"revenue",
+						"sales",
+						"earnings"
+					],
+					"min_len": 3,
+					"keys": [
+						"last",
+						"past",
+						"previous",
+						"ago"
+					],
+					"period": [
+						"year"
+					]
+				}
+			]
+		},
+		{
+			"tag": "today_margin",
+			"patterns": [
+				"profit for today",
+				"profit for this day",
+				"profit before tomorrow",
+				"profit for this morning",
+				"profit for this afternoon",
+				"profit for this evening",
+				"profit for this moment",
+				"profit for time being",
+				"profit now",
+				"my recent profit",
+				"gain for today",
+				"gain for this day",
+				"gain before tomorrow",
+				"gain for this morning",
+				"gain for this afternoon",
+				"gain for this evening",
+				"gain for this moment",
+				"gain for time being",
+				"gain now",
+				"my recent gain",
+				"income for today",
+				"income for this day",
+				"income before tomorrow",
+				"income for this morning",
+				"income for this afternoon",
+				"income for this evening",
+				"income for this moment",
+				"income for time being",
+				"income now",
+				"my recent income",
+				"margin for today",
+				"margin for this day",
+				"margin before tomorrow",
+				"margin for this morning",
+				"margin for this afternoon",
+				"margin for this evening",
+				"margin for this moment",
+				"margin for time being",
+				"margin now",
+				"my recent margin",
+				"net profit for today",
+				"net profit for this day",
+				"net profit before tomorrow",
+				"net profit for this morning",
+				"net profit for this afternoon",
+				"net profit for this evening",
+				"net profit for this moment",
+				"net profit for time being",
+				"net profit now",
+				"my recent net profit"
+			],
+			"responses": [
+				"_h1 _f1 Your margin for today is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your margin for today. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your margin for today. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"margin",
+						"profit",
+						"net profit",
+						"income",
+						"gain"
+					],
+					"min_len": 2,
+					"max_len": 3,
+					"keys": [
+						"this",
+						"recent",
+						"now"
+					],
+					"period": [
+						"today",
+						"moment",
+						"afternoon",
+						"evening",
+						"morning"
+					]
+				}
+			]
+		},
+		{
+			"tag": "yesterday_margin",
+			"patterns": [
+				"profit for yesterday",
+				"profit for the previous day",
+				"profit for yesterday morning",
+				"profit for yesterday afternoon",
+				"profit for yesterday evening",
+				"yesterday profit",
+				"gain for yesterday",
+				"gain for the previous day",
+				"gain for yesterday morning",
+				"gain for yesterday afternoon",
+				"gain for yesterday evening",
+				"yesterday gain",
+				"income for yesterday",
+				"income for the previous day",
+				"income for yesterday morning",
+				"income for yesterday afternoon",
+				"income for yesterday evening",
+				"yesterday income",
+				"margin for yesterday",
+				"margin for the previous day",
+				"margin for yesterday morning",
+				"margin for yesterday afternoon",
+				"margin for yesterday evening",
+				"yesterday margin",
+				"net profit for yesterday",
+				"net profit for the previous day",
+				"net profit for yesterday morning",
+				"net profit for yesterday afternoon",
+				"net profit for yesterday evening",
+				"yesterday net profit"
+			],
+			"responses": [
+				"_h1 _f1 Your margin for yesterday was _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your margin for yesterday. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your margin for yesterday. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"margin",
+						"profit",
+						"net profit",
+						"income",
+						"gain"
+					],
+					"min_len": 2,
+					"max_len": 3,
+					"keys": [
+						"yesterday",
+						"previous"
+					],
+					"period": []
+				}
+			]
+		},
+		{
+			"tag": "last_week_margin",
+			"patterns": [
+				"profit for last week",
+				"profit for the past week",
+				"profit for the previous week",
+				"profit one week ago",
+				"gain for last week",
+				"gain for the past week",
+				"gain for the previous week",
+				"gain one week ago",
+				"income for last week",
+				"income for the past week",
+				"income for the previous week",
+				"income one week ago",
+				"margin for last week",
+				"margin for the past week",
+				"margin for the previous week",
+				"margin one week ago",
+				"net profit for last week",
+				"net profit for the past week",
+				"net profit for the previous week",
+				"net profit one week ago"
+			],
+			"responses": [
+				"_h1 _f1 Your margin for last week was _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your margin for last week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your margin for last week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"margin",
+						"profit",
+						"net profit",
+						"income",
+						"gain"
+					],
+					"min_len": 3,
+					"keys": [
+						"last",
+						"past",
+						"previous",
+						"ago"
+					],
+					"period": [
+						"week"
+					]
+				}
+			]
+		},
+		{
+			"tag": "current_week_margin",
+			"patterns": [
+				"profit for this week",
+				"gain for this week",
+				"income for this week",
+				"margin for this week",
+				"net profit for this week"
+			],
+			"responses": [
+				"_h1 _f1 Your margin for this week is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your margin for this week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your margin for this week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"margin",
+						"profit",
+						"net profit",
+						"income",
+						"gain"
+					],
+					"min_len": 3,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"week"
+					]
+				}
+			]
+		},
+		{
+			"tag": "last_month_margin",
+			"patterns": [
+				"profit last month",
+				"profit, for a month ago",
+				"profit, one month ago",
+				"profit for the previous month",
+				"profit for the month",
+				"profit for the past month",
+				"gain last month",
+				"gain, for a month ago",
+				"gain, one month ago",
+				"gain for the previous month",
+				"gain for the month",
+				"gain for the past month",
+				"income last month",
+				"income, for a month ago",
+				"income, one month ago",
+				"income for the previous month",
+				"income for the month",
+				"income for the past month",
+				"margin last month",
+				"margin, for a month ago",
+				"margin, one month ago",
+				"margin for the previous month",
+				"margin for the month",
+				"margin for the past month",
+				"net profit last month",
+				"net profit, for a month ago",
+				"net profit, one month ago",
+				"net profit for the previous month",
+				"net profit for the month",
+				"net profit for the past month"
+			],
+			"responses": [
+				"_h1 _f1 Your margin for last month was _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your margin for last month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your margin for last month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"margin",
+						"profit",
+						"net profit",
+						"income",
+						"gain"
+					],
+					"min_len": 3,
+					"keys": [
+						"last",
+						"past",
+						"previous",
+						"ago"
+					],
+					"period": [
+						"month"
+					]
+				}
+			]
+		},
+		{
+			"tag": "current_month_margin",
+			"patterns": [
+				"profit for this month",
+				"this month profit",
+				"gain for this month",
+				"income for this month",
+				"margin for this month",
+				"net profit for this month"
+			],
+			"responses": [
+				"_h1 _f1 Your margin for this month is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your margin for this month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your margin for this month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"margin",
+						"profit",
+						"net profit",
+						"income",
+						"gain"
+					],
+					"min_len": 3,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"month"
+					]
+				}
+			]
+		},
+		{
+			"tag": "last_year_margin",
+			"patterns": [
+				"profit for last year",
+				"profit for the past year",
+				"profit for the previous year",
+				"profit year ago",
+				"profit one year ago",
+				"ayear profit",
+				"gain for last year",
+				"gain for the past year",
+				"gain for the previous year",
+				"gain year ago",
+				"gain one year ago",
+				"ayear gain",
+				"income for last year",
+				"income for the past year",
+				"income for the previous year",
+				"income year ago",
+				"income one year ago",
+				"ayear income",
+				"margin for last year",
+				"margin for the past year",
+				"margin for the previous year",
+				"margin year ago",
+				"margin one year ago",
+				"ayear margin",
+				"net profit for last year",
+				"net profit for the past year",
+				"net profit for the previous year",
+				"net profit year ago",
+				"net profit one year ago",
+				"ayear net profit"
+			],
+			"responses": [
+				"_h1 _f1 Your margin for this year is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your margin for this year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your margin for this year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"margin",
+						"profit",
+						"net profit",
+						"income",
+						"gain"
+					],
+					"min_len": 3,
+					"keys": [
+						"last",
+						"past",
+						"previous",
+						"ago"
+					],
+					"period": [
+						"year"
+					]
+				}
+			]
+		},
+		{
+			"tag": "current_year_margin",
+			"patterns": [
+				"profit for this year",
+				"gain for this year",
+				"income for this year",
+				"margin for this year",
+				"net profit for this year"
+			],
+			"responses": [
+				"_h1 _f1 Your margin for this year is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your margin for this year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your margin for this year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"margin",
+						"profit",
+						"net profit",
+						"income",
+						"gain"
+					],
+					"min_len": 3,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"year"
+					]
+				}
+			]
+		},
+		{
+			"tag": "today_expenses",
+			"patterns": [
+				"cost for today",
+				"cost for this day",
+				"cost for this very day",
+				"cost before tomorrow",
+				"cost for this morning",
+				"cost for this afternoon",
+				"cost for this evening",
+				"cost for this moment",
+				"cost for time being",
+				"cost now",
+				"my recent cost",
+				"expenses for today",
+				"expenses for this day",
+				"expenses for this very day",
+				"expenses before tomorrow",
+				"expenses for this morning",
+				"expenses for this afternoon",
+				"expenses for this evening",
+				"expenses for this moment",
+				"expenses for time being",
+				"expenses now",
+				"my recent expenses",
+				"expenditure for today",
+				"expenditure for this day",
+				"expenditure for this very day",
+				"expenditure before tomorrow",
+				"expenditure for this morning",
+				"expenditure for this afternoon",
+				"expenditure for this evening",
+				"expenditure for this moment",
+				"expenditure for time being",
+				"expenditure now",
+				"my recent expenditure",
+				"spending for today",
+				"spending for this day",
+				"spending for this very day",
+				"spending before tomorrow",
+				"spending for this morning",
+				"spending for this afternoon",
+				"spending for this evening",
+				"spending for this moment",
+				"spending for time being",
+				"spending now",
+				"my recent spending"
+			],
+			"responses": [
+				"_h1 _f1 Your spendings for today is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your spendings for today. h1_ _amt _f2 _value_ amt_ _amtdet  _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your spendings for today. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"cost",
+						"expenses",
+						"expenditure",
+						"spending"
+					],
+					"min_len": 2,
+					"max_len": 3,
+					"keys": [
+						"this",
+						"recent",
+						"now"
+					],
+					"period": [
+						"today",
+						"moment",
+						"afternoon",
+						"evening",
+						"morning"
+					]
+				}
+			]
+		},
+		{
+			"tag": "yesterday_expenses",
+			"patterns": [
+				"cost for yesterday",
+				"cost for the previous day",
+				"cost for yesterday morning",
+				"cost for yesterday afternoon",
+				"cost for yesterday evening",
+				"yesterday cost",
+				"expenses for yesterday",
+				"expenses for the previous day",
+				"expenses for yesterday morning",
+				"expenses for yesterday afternoon",
+				"expenses for yesterday evening",
+				"yesterday expenses",
+				"expenditure for yesterday",
+				"expenditure for the previous day",
+				"expenditure for yesterday morning",
+				"expenditure for yesterday afternoon",
+				"expenditure for yesterday evening",
+				"yesterday expenditure",
+				"spending for yesterday",
+				"spending for the previous day",
+				"spending for yesterday morning",
+				"spending for yesterday afternoon",
+				"spending for yesterday evening",
+				"yesterday spending"
+			],
+			"responses": [
+				"_h1 _f1 Your spendings for yesterday was _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your spendings for yesterday. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your spendings for yesterday. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"cost",
+						"expenses",
+						"expenditure",
+						"spending"
+					],
+					"min_len": 2,
+					"max_len": 3,
+					"keys": [
+						"yesterday",
+						"previous"
+					],
+					"period": []
+				}
+			]
+		},
+		{
+			"tag": "current_week_expenses",
+			"patterns": [
+				"expenses for this week",
+				"expenditure for this week",
+				"cost for this week",
+				"spending for this week"
+			],
+			"responses": [
+				"_h1 _f1 Your spendings for this week is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your spendings for this week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your spendings for this week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"cost",
+						"expenses",
+						"expenditure",
+						"spending"
+					],
+					"min_len": 3,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"week"
+					]
+				}
+			]
+		},
+		{
+			"tag": "last_week_expenses",
+			"patterns": [
+				"what was my cost for last week",
+				"cost for the past week",
+				"cost for the previous week",
+				"cost one week ago",
+				"expenses for last week",
+				"what was my expenses for the past week",
+				"expenses for the previous week",
+				"expenses one week ago",
+				"expenditure for last week",
+				"what was my expenditure for the past week",
+				"expenditure for the previous week",
+				"expenditure one week ago",
+				"spending for last week",
+				"what was my spending for the past week",
+				"spending for the previous week",
+				"spending one week ago"
+			],
+			"responses": [
+				"_h1 _f1 Your spendings for last week was _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your spendings for last week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your spendings for last week. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"cost",
+						"expenses",
+						"expenditure",
+						"spending"
+					],
+					"min_len": 3,
+					"keys": [
+						"last",
+						"past",
+						"previous",
+						"ago"
+					],
+					"period": [
+						"week"
+					]
+				}
+			]
+		},
+		{
+			"tag": "current_month_expenses",
+			"patterns": [
+				"expenses for this month",
+				"expenditure for this month",
+				"cost for this month",
+				"spending for this month"
+			],
+			"responses": [
+				"_h1 _f1 Your spendings for this month is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your spendings for this month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your spendings for this month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"cost",
+						"expenses",
+						"expenditure",
+						"spending"
+					],
+					"min_len": 3,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"month"
+					]
+				}
+			]
+		},
+		{
+			"tag": "last_month_expenses",
+			"patterns": [
+				"cost last month",
+				"cost, for a month ago",
+				"cost, one month ago",
+				"cost for the previous month",
+				"cost for the month",
+				"cost for the past month",
+				"expenses last month",
+				"expenses, for a month ago",
+				"expenses, one month ago",
+				"expenses for the previous month",
+				"expenses for the month",
+				"expenses for the past month",
+				"expenditure last month",
+				"expenditure, for a month ago",
+				"expenditure, one month ago",
+				"expenditure for the previous month",
+				"expenditure for the month",
+				"expenditure for the past month",
+				"spending last month",
+				"spending, for a month ago",
+				"spending, one month ago",
+				"spending for the previous month",
+				"spending for the month",
+				"spending for the past month"
+			],
+			"responses": [
+				"_h1 _f1 Your spendings for last month was _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your spendings for last month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your spendings for last month. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"cost",
+						"expenses",
+						"expenditure",
+						"spending"
+					],
+					"min_len": 3,
+					"keys": [
+						"last",
+						"past",
+						"previous",
+						"ago"
+					],
+					"period": [
+						"month"
+					]
+				}
+			]
+		},
+		{
+			"tag": "current_year_expenses",
+			"patterns": [
+				"expenses for this year",
+				"this year expenses",
+				"expenditure for this year",
+				"cost for this year",
+				"spending for this year"
+			],
+			"responses": [
+				"_h1 _f1 Your spendings for this year is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your spendings for this year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ is your spendings for this year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"cost",
+						"expenses",
+						"expenditure",
+						"spending"
+					],
+					"min_len": 3,
+					"keys": [
+						"this"
+					],
+					"period": [
+						"year"
+					]
+				}
+			]
+		},
+		{
+			"tag": "last_year_expenses",
+			"patterns": [
+				"cost for last year",
+				"cost for the past year",
+				"cost for the previous year",
+				"cost year ago",
+				"cost one year ago",
+				"ayear cost",
+				"expense for last year",
+				"expense for the past year",
+				"expense for the previous year",
+				"expense year ago",
+				"expense one year ago",
+				"ayear expense",
+				"expenditure for last year",
+				"expenditure for the past year",
+				"expenditure for the previous year",
+				"expenditure year ago",
+				"expenditure one year ago",
+				"ayear expenditure",
+				"spending for last year",
+				"spending for the past year",
+				"spending for the previous year",
+				"spending year ago",
+				"spending one year ago",
+				"ayear spending"
+			],
+			"responses": [
+				"_h1 _f1 Your spendings for last year is _value_. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 Here is your spendings for last year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_",
+				"_h1 _f1 _value_ was your spendings for last year. h1_ _amt _f2 _value_ amt_ _amtdet _f10 Click here for more details. amtdet_"
+			],
+			"context": "",
+			"queue": [],
+			"validate": [
+				{
+					"elements": [
+						"cost",
+						"expenses",
+						"expenditure",
+						"spending"
+					],
+					"min_len": 3,
+					"keys": [
+						"last",
+						"past",
+						"previous",
+						"ago"
+					],
+					"period": [
+						"year"
+					]
+				}
+			]
+		}
+	]
+}
